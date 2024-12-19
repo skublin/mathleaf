@@ -1,5 +1,5 @@
 ---
-title: First post
+title: Simple Blog Pipeline
 date: 2024-12-12
 draft: false
 tags:
@@ -18,3 +18,4 @@ Overview of our pipeline is pretty simple and straightforward.
 ![Image Description](/images/blog_pipeline%201.svg)
 
 ## Preparation
+Let's talk about what you need.
