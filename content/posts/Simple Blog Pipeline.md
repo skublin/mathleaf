@@ -15,7 +15,7 @@ The goal here is to use Obsidian as text editor, and after your post is ready, j
 
 Overview of our pipeline is pretty simple and straightforward.
 
-{{< figure src="/images/blog_pipeline 1.svg" alt="Pipeline Image" class="svg-image-class" >}}
+{{< img src="/images/blog_pipeline 1.svg" alt="Pipeline Image" class="svg-image-class" >}}
 
 <!---[[blog_pipeline 1.svg]]{: .svg-image-class}--->
 
