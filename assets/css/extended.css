@@ -1,5 +1,5 @@
 @media (prefers-color-scheme: dark) {
-  figure.some-image-class img {
+  figure.svg-image-class img {
     filter: invert(100%);
   }
 }
