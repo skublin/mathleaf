@@ -1,6 +1,10 @@
-@media (prefers-color-scheme: dark) {
-  figure.svg-image-class img {
-    filter: invert(100%);
-  }
+body.light figure.svg-image-class {
+  /* Tryb jasny - normalne kolory */
+  filter: none;
+}
+
+body.dark figure.svg-image-class {
+  /* Tryb ciemny - odwróć kolory lub zastosuj inną korektę */
+  filter: invert(100%);
 }
 
