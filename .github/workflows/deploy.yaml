@@ -2,8 +2,7 @@ name: Deploy Hugo Site
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
 
 jobs:
   build_and_deploy:
@@ -20,8 +19,18 @@ jobs:
       - name: Build site
         run: hugo --minify
 
-      - name: Deploy to VPS via rsync
-        run: rsync -avz --delete ./public/ root@srv09.mikr.us:/blog-mathleaf
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_rsa
+          # Dodajemy serwer do known_hosts, aby uniknąć promptu z pytaniem o zaufanie
+          ssh-keyscan -H srv09.mikr.us >> ~/.ssh/known_hosts
+        shell: bash
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Deploy to VPS via rsync
+        run: rsync -avz --delete ./public/ root@srv09.mikr.us:/var/www/mathleaf
