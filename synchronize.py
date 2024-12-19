@@ -16,8 +16,8 @@ for filename in os.listdir(posts_dir):
             content = file.read()
         
         # Step 2: Find all image links in the format ![Image Description](/images/Pasted%20image%20...%20.png)
-        images = re.findall(r'\[\[([^]]*\.png)\]\]', content)
-        
+        images = re.findall(r'\[\[([^]]*\.(?:png|svg))\]\]', content)
+
         # Step 3: Replace image links and ensure URLs are correctly formatted
         for image in images:
             # Prepare the Markdown-compatible link with %20 replacing spaces
