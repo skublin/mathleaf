@@ -15,7 +15,7 @@ The goal here is to use Obsidian as text editor, and after your post is ready, j
 
 Overview of our pipeline is pretty simple and straightforward.
 
-![Image Description](/images/blog_pipeline%201.svg)
+![Image Description](/images/blog_pipeline%201.svg){.svg-image-class}
 
 ## Preparation
 Let's talk about what you need.
