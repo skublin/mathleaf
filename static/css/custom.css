@@ -1,0 +1,6 @@
+@media (prefers-color-scheme: dark) {
+  img.some-image-class {
+    filter: invert(100%);
+  }
+}
+
